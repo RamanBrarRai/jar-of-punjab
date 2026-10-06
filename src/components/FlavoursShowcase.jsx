@@ -58,7 +58,7 @@ export default function FlavoursShowcase() {
         </div>
 
         {/* ---------- Big product image frame ---------- */}
-        <div className="relative max-w-2xl mx-auto">
+        <div className="relative max-w-xl mx-auto">
           <div className="aspect-square rounded-[2rem] overflow-hidden bg-paper shadow-[0_50px_100px_-40px_rgba(0,0,0,0.6)]">
             <img
               key={active.id} /* key forces re-mount so we can transition later */
@@ -122,9 +122,9 @@ export default function FlavoursShowcase() {
           </div>
         </div>
 
-        {/* ---------- Flavour tabs ---------- */}
-        <div className="mt-16 md:mt-20 flex justify-center">
-          <div className="flex gap-3 md:gap-5 overflow-x-auto pb-3 -mx-5 px-5 md:overflow-visible md:mx-0 md:px-0">
+        {/* ---------- Flavour tabs — floating icons like Tigris ---------- */}
+        <div className="mt-20 md:mt-28 flex justify-center">
+          <div className="flex gap-8 md:gap-16 overflow-x-auto pb-3 -mx-5 px-5 md:overflow-visible md:mx-0 md:px-0">
             {products.map((p, i) => {
               const Icon = iconForSlug[p.slug] || MangoIcon;
               const label = labelForSlug[p.slug] || p.category;
@@ -135,28 +135,26 @@ export default function FlavoursShowcase() {
                   key={p.id}
                   onClick={() => setActiveIdx(i)}
                   className={
-                    "group flex-shrink-0 flex flex-col items-center gap-2 transition-all duration-300 " +
+                    "group flex-shrink-0 flex flex-col items-center gap-4 transition-all duration-300 " +
                     (isActive
-                      ? "opacity-100"
-                      : "opacity-50 hover:opacity-90")
+                      ? "opacity-100 scale-110"
+                      : "opacity-40 hover:opacity-100 hover:scale-105")
                   }
                   aria-label={"View " + p.name}
                   aria-pressed={isActive}
                 >
-                  <div
+                  <Icon
                     className={
-                      "w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center border transition-all duration-300 " +
+                      "w-12 h-12 md:w-16 md:h-16 transition-all duration-300 drop-shadow-lg " +
                       (isActive
-                        ? "bg-mustard text-ink border-mustard scale-110 shadow-lg"
-                        : "bg-paper/5 text-paper/70 border-paper/20 group-hover:border-mustard/60")
+                        ? "text-mustard"
+                        : "text-paper group-hover:text-mustard")
                     }
-                  >
-                    <Icon className="w-6 h-6 md:w-7 md:h-7" />
-                  </div>
+                  />
                   <span
                     className={
-                      "text-[10px] md:text-[11px] uppercase tracking-[0.14em] font-medium transition-colors " +
-                      (isActive ? "text-mustard" : "text-paper/50")
+                      "text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-bold transition-colors " +
+                      (isActive ? "text-mustard" : "text-paper/70 group-hover:text-paper")
                     }
                   >
                     {label}
