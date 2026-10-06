@@ -197,3 +197,67 @@ export function MinusIcon({ className = "w-5 h-5" }) {
     </svg>
   );
 }
+
+
+// ============================================================
+// FRUIT ICONS — for the Flavours showcase tabs
+// ============================================================
+
+export function MangoIcon({ className = "w-6 h-6" }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <path d="M12 21c-4 0-7-3-7-8 0-4 3-8 6-9 1.5 3 5 3 6 5 2 4 0 12-5 12Z" />
+      <path d="M12 4c0-1 1-2 3-2" />
+    </svg>
+  );
+}
+
+export function LemonIcon({ className = "w-6 h-6" }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <ellipse cx="12" cy="13" rx="8" ry="6.5" />
+      <path d="M4 13c0-3.5 3.5-6.5 8-6.5" />
+      <path d="M9 4l1 2M11 3.5l.5 2.5M13 4l-.5 2.5" />
+    </svg>
+  );
+}
+
+export function ChilliIcon({ className = "w-6 h-6" }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <path d="M9 4c0 1 .5 1.5 1 2" />
+      <path d="M10 6c3 0 8 3 8 9 0 3-2.5 5-5 5-4 0-8-3-8-8 0-3.5 2-6 5-6Z" />
+      <path d="M9 4c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1Z" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function AmlaIcon({ className = "w-6 h-6" }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <circle cx="12" cy="13" r="8" />
+      <path d="M12 5v-2" />
+      <path d="M6 13c0-3 2-6 4-7M18 13c0 3-2 6-4 7" />
+    </svg>
+  );
+}
+
+export function CarrotIcon({ className = "w-6 h-6" }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <path d="M12 21L6 9c2-1 4-1.5 6-1.5s4 .5 6 1.5L12 21Z" />
+      <path d="M12 7.5V4M9 3.5l1 2M15 3.5l-1 2" />
+    </svg>
+  );
+}
+
+export function MixedJarIcon({ className = "w-6 h-6" }) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <path d="M8 3h8v2.5l1.5 2v11.5A2 2 0 0 1 15.5 21h-7A2 2 0 0 1 6.5 19V7.5L8 5.5V3Z" />
+      <circle cx="10" cy="12" r="1" fill="currentColor" />
+      <circle cx="14" cy="14" r="1" fill="currentColor" />
+      <circle cx="11" cy="16.5" r="1" fill="currentColor" />
+    </svg>
+  );
+}
