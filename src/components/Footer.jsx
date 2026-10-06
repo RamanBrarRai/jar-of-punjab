@@ -20,8 +20,8 @@ export default function Footer() {
                 className="h-[80px] w-[80px] object-contain flex-shrink-0"
               />
             <div>
-              <div className="font-display text-lg text-mustard">Jar Of Punjab</div>
-              <div className="font-punjabi text-xs text-paper/50">ਜਾਰ ਆਫ਼ ਪੰਜਾਬ</div>
+              <div className="font-display text-lg text-mustard font-black">Jar Of Punjab</div>
+              <div className="font-punjabi text-xs text-paper/50 font-black">ਜਾਰ ਆਫ਼ ਪੰਜਾਬ</div>
             </div>
           </div>
           <p className="mt-5 text-[13px] text-paper/60 leading-relaxed max-w-xs">
