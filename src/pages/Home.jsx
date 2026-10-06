@@ -8,6 +8,7 @@ import Review from "../components/Review";
 import Button from "../components/Button";
 import SectionReveal from "../components/SectionReveal";
 import Marquee from "../components/Marquee";
+import FlavoursShowcase from "../components/FlavoursShowcase";
 import { LeafIcon, JarIcon, SparkleIcon, HeartIcon } from "../components/Icons";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -153,6 +154,12 @@ export default function Home() {
           </SectionReveal>
         </div>
       </section>
+
+      {/* ============================================================
+          FLAVOURS SHOWCASE — interactive jar switcher
+          ============================================================ */}
+      <FlavoursShowcase />
+      
 
       {/* ============================================================
           WHY
