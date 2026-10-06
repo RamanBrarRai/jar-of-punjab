@@ -1,4 +1,12 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import {
+  InstagramIcon,
+  FacebookIcon,
+  WhatsAppIcon,
+  MailIcon,
+  PhoneIcon,
+  MapPinIcon,
+} from "./Icons";
 
 export default function Footer() {
   return (
@@ -43,25 +51,47 @@ export default function Footer() {
 
         <div>
           <h4 className="text-[11px] uppercase tracking-[0.18em] text-mustard/90 mb-4">Say Hello</h4>
-          <p className="text-[13px] text-paper/70">hello@jarofpunjab.com</p>
-          <p className="text-[13px] text-paper/70 mt-1">+91 98765 43210</p>
-          <p className="text-[13px] text-paper/70 mt-1">Ludhiana, Punjab</p>
-          <div className="flex gap-4 mt-5 text-[13px]">
+          <ul className="space-y-2.5 text-[13px] text-paper/70">
+            <li className="flex items-center gap-2">
+              <MailIcon className="w-4 h-4 text-mustard/80" />
+              hello@jarofpunjab.com
+            </li>
+            <li className="flex items-center gap-2">
+              <PhoneIcon className="w-4 h-4 text-mustard/80" />
+              +91 98765 43210
+            </li>
+            <li className="flex items-center gap-2">
+              <MapPinIcon className="w-4 h-4 text-mustard/80" />
+              Ludhiana, Punjab
+            </li>
+          </ul>
+          <div className="flex gap-4 mt-5">
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-mustard"
+              className="hover:text-mustard transition"
+              aria-label="Instagram"
             >
-              Instagram
+              <InstagramIcon className="w-5 h-5" />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-mustard transition"
+              aria-label="Facebook"
+            >
+              <FacebookIcon className="w-5 h-5" />
             </a>
             <a
               href="https://wa.me/919876543210"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-mustard"
+              className="hover:text-mustard transition"
+              aria-label="WhatsApp"
             >
-              WhatsApp
+              <WhatsAppIcon className="w-5 h-5" />
             </a>
           </div>
         </div>
