@@ -1,12 +1,15 @@
-﻿export default function Button({
+import { ArrowRightIcon } from "./Icons";
+
+export default function Button({
   children,
   variant = "primary",
   className = "",
   as: As = "button",
+  showArrow = false,
   ...props
 }) {
   const base =
-    "inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-medium text-sm tracking-wide transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brick focus-visible:ring-offset-2 focus-visible:ring-offset-paper disabled:opacity-50 disabled:cursor-not-allowed";
+    "group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-medium text-sm tracking-wide transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brick focus-visible:ring-offset-2 focus-visible:ring-offset-paper disabled:opacity-50 disabled:cursor-not-allowed";
   const styles = {
     primary: "bg-brick text-paper hover:bg-deepred",
     secondary: "bg-mustard text-ink hover:bg-brick hover:text-paper",
@@ -16,6 +19,9 @@
   return (
     <As className={base + " " + styles[variant] + " " + className} {...props}>
       {children}
+      {showArrow && (
+        <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+      )}
     </As>
   );
 }
