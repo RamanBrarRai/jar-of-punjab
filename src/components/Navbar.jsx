@@ -43,8 +43,8 @@ export default function Navbar() {
               className="h-[80px] w-[80px] object-contain flex-shrink-0"
             />
           <div className="leading-tight hidden sm:block min-w-0">
-            <div className="font-display text-lg text-ink truncate">Jar Of Punjab</div>
-            <div className="font-punjabi text-xs text-brick/80 truncate">ਜਾਰ ਆਫ਼ ਪੰਜਾਬ</div>
+            <div className="font-display font-black text-lg text-ink truncate">Jar Of Punjab</div>
+            <div className="font-punjabi font-black text-xs text-brick/80 truncate">ਜਾਰ ਆਫ਼ ਪੰਜਾਬ</div>
           </div>
         </Link>
 
