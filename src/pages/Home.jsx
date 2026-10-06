@@ -180,6 +180,7 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
       </SectionReveal>
 
       {/* ===================== STORY ===================== */}
@@ -195,7 +196,7 @@ export default function Home() {
             backgroundPosition: "0 0, 16px 16px",
           }}
         />
-      
+
         <div className="relative max-w-5xl mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
           <div className="md:col-span-5">
             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-sand shadow-[0_30px_70px_-50px_rgba(62,43,31,0.5)]">
@@ -217,7 +218,7 @@ export default function Home() {
               />
             </div>
           </div>
-      
+
           <div className="md:col-span-7 text-center md:text-left">
             <div className="font-punjabi text-brick/70 text-base">ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ</div>
             <h2 className="font-display text-[1.9rem] md:text-[2.8rem] text-ink mt-3 leading-[1.1]">
