@@ -1,17 +1,29 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function ProductCard({ product }) {
+  const isFeatured = product.featured;
+
   return (
     <Link
       to={"/product/" + product.slug}
       className="group block text-center"
     >
-      <div className="relative aspect-square rounded-full overflow-hidden bg-sand mx-auto max-w-[280px] shadow-[0_20px_50px_-30px_rgba(62,43,31,0.35)] group-hover:shadow-[0_30px_70px_-30px_rgba(168,69,46,0.45)] transition-all duration-700">
+      {/* Circular image frame */}
+      <div className="relative aspect-square rounded-full overflow-hidden bg-sand mx-auto max-w-[340px] shadow-[0_25px_60px_-35px_rgba(62,43,31,0.4)] group-hover:shadow-[0_35px_80px_-35px_rgba(168,69,46,0.55)] transition-all duration-700">
+
+        {/* Most Loved badge */}
+        {isFeatured && (
+          <div className="absolute top-4 right-4 z-10 bg-brick text-paper text-[10px] uppercase tracking-[0.14em] font-medium px-3 py-1.5 rounded-full shadow-md">
+            Most Loved
+          </div>
+        )}
+
+        {/* Image */}
         <img
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-[1200ms]"
+          className="w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-[1200ms] ease-out"
           onError={(e) => {
             e.currentTarget.style.display = "none";
             e.currentTarget.parentElement.innerHTML =
@@ -19,22 +31,58 @@ export default function ProductCard({ product }) {
           }}
         />
       </div>
-      <div className="mt-6">
-        <div className="font-punjabi text-xs text-brick/70">
+
+      {/* Text block */}
+      <div className="mt-7 max-w-[300px] mx-auto">
+        {/* Category label — small, uppercase, brick */}
+        <div className="text-[10px] uppercase tracking-[0.22em] text-brick/70">
+          {product.category}
+        </div>
+
+        {/* Punjabi name */}
+        <div className="font-punjabi text-[13px] text-brick/80 mt-2">
           {product.punjabiName}
         </div>
-        <h3 className="font-display text-[1.5rem] md:text-[1.6rem] text-ink mt-1 leading-tight">
+
+        {/* Product name — display font */}
+        <h3 className="font-display text-[1.5rem] md:text-[1.7rem] text-ink mt-1 leading-[1.15] group-hover:text-brick transition-colors duration-300">
           {product.name}
         </h3>
-        <p className="text-[13px] text-earthy/60 mt-2 max-w-[260px] mx-auto leading-relaxed line-clamp-2">
+
+        {/* Short description */}
+        <p className="text-[13px] text-earthy/60 mt-3 leading-relaxed line-clamp-2">
           {product.shortDesc}
         </p>
-        <div className="mt-3 text-sm text-brick font-medium">
-          ₹{product.price}
-          <span className="text-earthy/50 font-normal">
-            {" "}
-            · {product.sizes[0].size}
+
+        {/* Price + size + View arrow */}
+        <div className="mt-4 flex items-center justify-center gap-3">
+          <span className="text-brick font-medium">
+            ₹{product.price}
           </span>
+          <span className="text-earthy/40 text-[12px]">
+            ·
+          </span>
+          <span className="text-earthy/60 text-[12px]">
+            {product.sizes[0].size}
+          </span>
+        </div>
+
+        {/* Hover-reveal CTA */}
+        <div className="mt-3 flex items-center justify-center gap-1.5 text-[12px] uppercase tracking-[0.16em] text-brick opacity-0 group-hover:opacity-100 -translate-y-1 group-hover:translate-y-0 transition-all duration-300">
+          <span>View</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-3.5 h-3.5"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14M13 5l7 7-7 7" />
+          </svg>
         </div>
       </div>
     </Link>
