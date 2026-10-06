@@ -4,6 +4,7 @@ import { products } from "../data/products";
 import { useCart } from "../context/CartContext";
 import Button from "../components/Button";
 import SectionReveal from "../components/SectionReveal";
+import { WhatsAppIcon } from "../components/Icons";
 
 export default function ProductDetails() {
   const { slug } = useParams();
@@ -88,8 +89,14 @@ export default function ProductDetails() {
             <Button onClick={handleBuyNow} className="flex-1 min-w-[180px]">Buy Now</Button>
           </div>
 
-          <a href={"https://wa.me/919876543210?text=Hi! I want to order " + product.name + " (" + size.size + ")"} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-leaf font-semibold hover:underline">
-            💬 Order via WhatsApp
+          <a
+            href={"https://wa.me/919876543210?text=Hi! I want to order " + product.name + " (" + size.size + ")"}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-flex items-center gap-2 text-leaf font-medium hover:text-brick"
+          >
+            <WhatsAppIcon className="w-5 h-5" />
+            Order via WhatsApp
           </a>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
@@ -100,8 +107,18 @@ export default function ProductDetails() {
           </div>
 
           <div className="mt-6 flex items-center gap-2">
-            <span className="font-semibold text-earthy text-sm">Spice level:</span>
-            <span className="text-lg">{"🌶️".repeat(product.spiceLevel)}<span className="opacity-30">{"🌶️".repeat(5 - product.spiceLevel)}</span></span>
+            <span className="font-medium text-earthy text-sm">Spice level:</span>
+            <div className="flex gap-1">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <span
+                  key={n}
+                  className={
+                    "inline-block w-2.5 h-2.5 rounded-full " +
+                    (n <= product.spiceLevel ? "bg-brick" : "bg-earthy/15")
+                  }
+                />
+              ))}
+            </div>
           </div>
         </SectionReveal>
       </div>
