@@ -1,6 +1,7 @@
-﻿import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
+import { CartIcon, MenuIcon, CloseIcon } from "./Icons";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -54,9 +55,7 @@ export default function Navbar() {
                 to={l.to}
                 className={({ isActive }) =>
                   "relative pb-1 transition-colors " +
-                  (isActive
-                    ? "text-brick font-medium"
-                    : "hover:text-brick")
+                  (isActive ? "text-brick font-medium" : "hover:text-brick")
                 }
               >
                 {l.label}
@@ -71,7 +70,8 @@ export default function Navbar() {
             className="relative inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-earthy/70 hover:text-brick transition"
             aria-label={"Cart, " + cartCount + " items"}
           >
-            Cart
+            <CartIcon className="w-5 h-5" />
+            <span className="hidden sm:inline">Cart</span>
             {cartCount > 0 && (
               <span className="bg-brick text-paper text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-medium">
                 {cartCount}
@@ -80,11 +80,11 @@ export default function Navbar() {
           </Link>
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-2xl text-ink w-10 h-10 flex items-center justify-center"
+            className="md:hidden text-ink w-10 h-10 flex items-center justify-center"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
-            {open ? "✕" : "☰"}
+            {open ? <CloseIcon /> : <MenuIcon />}
           </button>
         </div>
       </nav>
