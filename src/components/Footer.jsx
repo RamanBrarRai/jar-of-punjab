@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-ink text-paper/85 mt-0">
       <div className="max-w-6xl mx-auto px-5 md:px-10 py-16 grid md:grid-cols-4 gap-10">
-        <div className="md:col-span-1">
+        <div className="md:col-span-4">
           <div className="flex items-center gap-3">
             <img
                 src="/logo.png"
