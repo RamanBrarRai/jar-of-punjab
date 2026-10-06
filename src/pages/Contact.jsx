@@ -62,24 +62,50 @@ export default function Contact() {
         </SectionReveal>
 
         <SectionReveal delay={0.1} className="space-y-4">
-          <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" className="flex items-center gap-4 bg-leaf/10 p-6 rounded-3xl hover:bg-leaf/20 transition">
-            <div className="text-4xl">💬</div>
+          <a
+            href="https://wa.me/919876543210"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-4 bg-leaf/10 p-6 rounded-3xl hover:bg-leaf/20 transition"
+          >
+            <div className="text-leaf">
+              <WhatsAppIcon className="w-8 h-8" />
+            </div>
             <div>
-              <div className="font-heading font-bold text-deepred">WhatsApp</div>
-              <div className="text-sm text-earthy/70">Fastest way to reach us — order in 1 minute</div>
+              <div className="font-display font-medium text-ink">WhatsApp</div>
+              <div className="text-sm text-earthy/70">
+                Fastest way to reach us — order in 1 minute
+              </div>
             </div>
           </a>
-          <div className="flex items-center gap-4 bg-white p-6 rounded-3xl">
-            <div className="text-4xl">📧</div>
-            <div><div className="font-heading font-bold text-deepred">Email</div><div className="text-sm text-earthy/70">hello@jarofpunjab.com</div></div>
+          <div className="flex items-center gap-4 bg-paper p-6 rounded-3xl border border-earthy/5">
+            <div className="text-brick">
+              <MailIcon className="w-7 h-7" />
+            </div>
+            <div>
+              <div className="font-display font-medium text-ink">Email</div>
+              <div className="text-sm text-earthy/70">hello@jarofpunjab.com</div>
+            </div>
           </div>
-          <div className="flex items-center gap-4 bg-white p-6 rounded-3xl">
-            <div className="text-4xl">📍</div>
-            <div><div className="font-heading font-bold text-deepred">Kitchen</div><div className="text-sm text-earthy/70">Ludhiana, Punjab — shipping all over India</div></div>
+          <div className="flex items-center gap-4 bg-paper p-6 rounded-3xl border border-earthy/5">
+            <div className="text-brick">
+              <MapPinIcon className="w-7 h-7" />
+            </div>
+            <div>
+              <div className="font-display font-medium text-ink">Kitchen</div>
+              <div className="text-sm text-earthy/70">
+                Ludhiana, Punjab — shipping all over India
+              </div>
+            </div>
           </div>
-          <div className="flex items-center gap-4 bg-white p-6 rounded-3xl">
-            <div className="text-4xl">🕒</div>
-            <div><div className="font-heading font-bold text-deepred">Hours</div><div className="text-sm text-earthy/70">Mon–Sat · 9am to 7pm</div></div>
+          <div className="flex items-center gap-4 bg-paper p-6 rounded-3xl border border-earthy/5">
+            <div className="text-brick">
+              <ClockIcon className="w-7 h-7" />
+            </div>
+            <div>
+              <div className="font-display font-medium text-ink">Hours</div>
+              <div className="text-sm text-earthy/70">Mon–Sat · 9am to 7pm</div>
+            </div>
           </div>
         </SectionReveal>
       </div>
