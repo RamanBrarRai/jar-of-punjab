@@ -65,7 +65,7 @@ export default function Footer() {
               Ludhiana, Punjab
             </li>
           </ul>
-          <div className="flex gap-4 mt-5">
+          <div className="flex items-center gap-4 mt-5">
             <a
               href="https://instagram.com"
               target="_blank"
@@ -91,7 +91,7 @@ export default function Footer() {
               className="hover:text-mustard transition"
               aria-label="WhatsApp"
             >
-              <WhatsAppIcon className="w-5 h-5" />
+              <WhatsAppIcon className="w-4 h-4" />
             </a>
           </div>
         </div>
