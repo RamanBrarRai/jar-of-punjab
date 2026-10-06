@@ -138,7 +138,7 @@ export default function Home() {
             </p>
           </SectionReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 md:gap-y-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-24 md:gap-y-28">
             {allProducts.map((p, i) => (
               <SectionReveal key={p.id} delay={i * 0.05}>
                 <ProductCard product={p} />
