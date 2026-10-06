@@ -59,7 +59,7 @@ export function StarIcon({ filled = true, className = "w-4 h-4" }) {
   );
 }
 
-export function WhatsAppIcon({ className = "w-5 h-5" }) {
+export function WhatsAppIcon({ className = "w-4 h-4" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
