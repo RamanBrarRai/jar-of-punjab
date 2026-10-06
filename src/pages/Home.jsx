@@ -67,7 +67,7 @@ export default function Home() {
           </p>
 
           {/* Jar image — big, centered, calm */}
-          <div className="hero-jar mt-12 md:mt-16 mx-auto max-w-[320px] md:max-w-[420px]">
+          <div className="hero-jar mt-10 md:mt-14 mx-auto max-w-[240px] md:max-w-[320px]">
             <img
               src={heroProduct.image}
               alt={heroProduct.name}
