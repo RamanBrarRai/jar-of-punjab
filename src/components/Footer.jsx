@@ -15,10 +15,10 @@ export default function Footer() {
         <div className="md:col-span-1">
           <div className="flex items-center gap-3">
             <img
-              src="/favicon.png"
-              alt="Jar Of Punjab logo"
-              className="h-10 w-10 object-contain rounded-full"
-            />
+                src="/logo.png"
+                alt="Jar Of Punjab logo"
+                className="h-[80px] w-[80px] object-contain flex-shrink-0"
+              />
             <div>
               <div className="font-display text-lg text-mustard">Jar Of Punjab</div>
               <div className="font-punjabi text-xs text-paper/50">ਜਾਰ ਆਫ਼ ਪੰਜਾਬ</div>
