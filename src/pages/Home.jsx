@@ -7,6 +7,7 @@ import ProductCard from "../components/ProductCard";
 import Review from "../components/Review";
 import Button from "../components/Button";
 import SectionReveal from "../components/SectionReveal";
+import { LeafIcon, JarIcon, SparkleIcon, HeartIcon } from "../components/Icons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -149,42 +150,84 @@ export default function Home() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 max-w-5xl mx-auto">
             {[
-              { n: "01", title: "Authentic Recipes", desc: "Traditional Punjabi achar, made the way it has been for generations." },
-              { n: "02", title: "Small Batch", desc: "Each jar is made by hand in our family kitchen." },
-              { n: "03", title: "Careful Ingredients", desc: "Raw mangoes, amla and chillies from local Punjab farms." },
-              { n: "04", title: "Delivered With Care", desc: "Packed with love and shipped across India." },
-            ].map((f) => (
-              <div key={f.n}>
-                <div className="font-display text-[2.4rem] md:text-[2.8rem] text-brick/50">
-                  {f.n}
+              {
+                Icon: LeafIcon,
+                title: "Authentic Recipes",
+                desc: "Traditional Punjabi achar, made the way it has been for generations.",
+              },
+              {
+                Icon: JarIcon,
+                title: "Small Batch",
+                desc: "Each jar is made by hand in our family kitchen.",
+              },
+              {
+                Icon: SparkleIcon,
+                title: "Careful Ingredients",
+                desc: "Raw mangoes, amla and chillies from local Punjab farms.",
+              },
+              {
+                Icon: HeartIcon,
+                title: "Delivered With Care",
+                desc: "Packed with love and shipped across India.",
+              },
+            ].map(({ Icon, title, desc }) => (
+              <div key={title}>
+                <div className="w-12 h-12 rounded-full bg-brick/10 text-brick flex items-center justify-center">
+                  <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="font-display text-lg md:text-xl text-ink mt-3">
-                  {f.title}
-                </h3>
-                <p className="text-[14px] text-earthy/65 mt-2 leading-relaxed">
-                  {f.desc}
-                </p>
+                <h3 className="font-display text-lg md:text-xl text-ink mt-4">{title}</h3>
+                <p className="text-[14px] text-earthy/65 mt-2 leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
-        </div>
       </SectionReveal>
 
       {/* ===================== STORY ===================== */}
-      <section className="bg-paper py-20 md:py-32">
-        <div className="max-w-5xl mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+      <section className="relative bg-paper py-20 md:py-32 overflow-hidden">
+        {/* Subtle Punjabi-inspired pattern backdrop */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(#7A1F1F 1.2px, transparent 1.2px), radial-gradient(#E8B65A 1.2px, transparent 1.2px)",
+            backgroundSize: "32px 32px, 32px 32px",
+            backgroundPosition: "0 0, 16px 16px",
+          }}
+        />
+      
+        <div className="relative max-w-5xl mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
           <div className="md:col-span-5">
-            <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-sand shadow-[0_30px_70px_-50px_rgba(62,43,31,0.5)] flex items-center justify-center text-[8rem]">
-              👩🏽‍🍳
+            <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-sand shadow-[0_30px_70px_-50px_rgba(62,43,31,0.5)]">
+              <img
+                src="/products/mixed.jpg"
+                alt="Traditional Punjabi achar being prepared"
+                loading="lazy"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                  e.currentTarget.parentElement.classList.add(
+                    "flex",
+                    "items-center",
+                    "justify-center"
+                  );
+                  e.currentTarget.parentElement.innerHTML =
+                    '<div class="w-full h-full flex items-center justify-center text-brick/20"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="w-32 h-32"><path d="M8 3h8v2.5l1.5 2v11.5A2 2 0 0 1 15.5 21h-7A2 2 0 0 1 6.5 19V7.5L8 5.5V3Z"/><path d="M8 8h8"/></svg></div>';
+                }}
+              />
             </div>
           </div>
+      
           <div className="md:col-span-7 text-center md:text-left">
             <div className="font-punjabi text-brick/70 text-base">ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ</div>
             <h2 className="font-display text-[1.9rem] md:text-[2.8rem] text-ink mt-3 leading-[1.1]">
               A Taste of Punjab in Every Jar
             </h2>
             <p className="mt-5 md:mt-6 text-[15px] md:text-[16px] text-earthy/75 leading-relaxed">
-              Jar Of Punjab began with a simple wish — to share the taste of home with everyone. Every jar comes from a kitchen where recipes have been passed down for generations, where mangoes are sun-dried by hand, and where a little piece of Punjab goes into everything we make.
+              Jar Of Punjab began with a simple wish — to share the taste of home with
+              everyone. Every jar comes from a kitchen where recipes have been passed
+              down for generations, where mangoes are sun-dried by hand, and where a
+              little piece of Punjab goes into everything we make.
             </p>
             <p className="mt-5 font-display text-xl md:text-2xl text-brick italic">
               "Har jar vich Punjab."
@@ -192,9 +235,24 @@ export default function Home() {
             <div className="mt-6 md:mt-8">
               <Link
                 to="/about"
-                className="text-sm text-brick underline underline-offset-4 decoration-brick/30"
+                className="group inline-flex items-center gap-2 text-sm text-brick font-medium"
               >
-                Read Our Story →
+                <span className="underline underline-offset-4 decoration-brick/30 group-hover:decoration-brick">
+                  Read Our Story
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
               </Link>
             </div>
           </div>
