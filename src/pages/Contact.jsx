@@ -1,6 +1,7 @@
 ﻿import { useState } from "react";
 import Button from "../components/Button";
 import SectionReveal from "../components/SectionReveal";
+import { WhatsAppIcon, MailIcon, MapPinIcon, ClockIcon } from "../components/Icons";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
