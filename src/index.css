@@ -43,3 +43,28 @@ h1, h2, h3, h4 {
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   html { scroll-behavior: auto; }
 }
+
+
+/* ============================================================
+   MARQUEE — infinite horizontal scroll
+   ============================================================ */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+
+.marquee-track {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover — a subtle premium touch */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
