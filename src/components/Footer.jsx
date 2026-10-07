@@ -19,9 +19,6 @@ export default function Footer() {
               alt="Jar Of Punjab"
               className="h-[90px] md:h-[110px] w-auto object-contain"
             />
-            <p className="text-[13px] text-paper/60 leading-relaxed max-w-[260px]">
-              Authentic Punjabi flavours in every jar.
-            </p>
           </div>
           <p className="mt-5 text-[13px] text-paper/60 leading-relaxed max-w-xs">
             Authentic Punjabi flavours in every jar.
