@@ -36,16 +36,12 @@ export default function Navbar() {
       }
     >
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-5 md:px-10 py-4">
-        <Link to="/" className="flex items-center gap-3 min-w-0">
+        <Link to="/" className="flex items-center flex-shrink-0">
           <img
-              src="/logo.png"
-              alt="Jar Of Punjab logo"
-              className="h-[80px] w-[80px] object-contain flex-shrink-0"
-            />
-          <div className="leading-tight hidden sm:block min-w-0">
-            <div className="font-display font-black text-lg text-ink truncate">Jar Of Punjab</div>
-            <div className="font-punjabi font-black text-xs text-brick/80 truncate">ਜਾਰ ਆਫ਼ ਪੰਜਾਬ</div>
-          </div>
+            src="/logo.png"
+            alt="Jar Of Punjab"
+            className="h-[70px] md:h-[90px] w-auto object-contain"
+          />
         </Link>
 
         <ul className="hidden md:flex gap-10 text-[14px] text-earthy/70">
