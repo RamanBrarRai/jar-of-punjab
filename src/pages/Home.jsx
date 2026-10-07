@@ -168,13 +168,13 @@ export default function Home() {
       <section className="bg-paper py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-5 md:px-10">
           <SectionReveal className="text-center mb-14 md:mb-20">
-            <div className="text-[11px] uppercase tracking-[0.22em] text-brandPink/80">
+            <div className="inline-flex items-center bg-brandPink text-cream text-[10px] uppercase tracking-[0.28em] font-bold px-5 py-2.5 rounded-full">
               The Collection
             </div>
-            <h2 className="font-display text-[2.1rem] md:text-[3.2rem] text-ink mt-4">
+            <h2 className="font-display text-[2.5rem] md:text-[3.8rem] text-ink mt-6 leading-[1.05]">
               Explore Our Pickles
             </h2>
-            <p className="text-earthy/60 mt-4 max-w-md mx-auto text-[15px]">
+            <p className="text-earthy/60 mt-5 max-w-md mx-auto text-[15px] md:text-[16px]">
               Bring authentic Punjabi flavours to every meal.
             </p>
           </SectionReveal>
@@ -245,7 +245,7 @@ export default function Home() {
           <div className="md:col-span-5">
             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-sand shadow-[0_30px_70px_-50px_rgba(15,74,63,0.5)]">
               <img
-                src="/products/mixed.jpg"
+                src="/products/mixed.png"
                 alt="Traditional Punjabi achar being prepared"
                 loading="lazy"
                 className="w-full h-full object-cover"
