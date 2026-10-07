@@ -15,14 +15,13 @@ export default function Footer() {
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
             <img
-                src="/logo.png"
-                alt="Jar Of Punjab logo"
-                className="h-[80px] w-[80px] object-contain flex-shrink-0"
-              />
-            <div>
-              <div className="font-display text-lg text-mustard font-black">Jar Of Punjab</div>
-              <div className="font-punjabi text-xs text-paper/50 font-black">ਜਾਰ ਆਫ਼ ਪੰਜਾਬ</div>
-            </div>
+              src="/logo.png"
+              alt="Jar Of Punjab"
+              className="h-[90px] md:h-[110px] w-auto object-contain"
+            />
+            <p className="text-[13px] text-paper/60 leading-relaxed max-w-[260px]">
+              Authentic Punjabi flavours in every jar.
+            </p>
           </div>
           <p className="mt-5 text-[13px] text-paper/60 leading-relaxed max-w-xs">
             Authentic Punjabi flavours in every jar.
