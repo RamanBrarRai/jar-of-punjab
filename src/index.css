@@ -44,10 +44,11 @@ h1, h2, h3, h4 {
    ============================================================ */
 @keyframes marquee {
   from { transform: translateX(0); }
-  to   { transform: translateX(-33.333%); }
+  to   { transform: translateX(-50%); }
 }
+
 .marquee-track {
-  animation: marquee 40s linear infinite;
+  animation: marquee 18s linear infinite;
   will-change: transform;
 }
 .marquee-track:hover {
