@@ -4,36 +4,32 @@ export default function ProductCard({ product }) {
   const isFeatured = product.featured;
 
   return (
-    <Link
-      to={"/product/" + product.slug}
-      className="group block text-center"
-    >
+    <Link to={"/product/" + product.slug} className="group block text-center">
       {/* Circular image frame */}
-      <div className="relative aspect-square rounded-full overflow-hidden bg-sand mx-auto max-w-[340px] shadow-[0_25px_60px_-35px_rgba(15,74,63,0.35)] group-hover:shadow-[0_35px_80px_-35px_rgba(233,30,99,0.45)] transition-all duration-700">
-
-        {/* Most Loved badge */}
-        {isFeatured && (
-          <div className="absolute top-4 right-4 z-10 bg-brandPink text-cream text-[10px] uppercase tracking-[0.14em] font-bold px-3 py-1.5 rounded-full shadow-md">
-            Most Loved
-          </div>
-        )}
-
-        {/* Image */}
+      <div className="relative aspect-square rounded-full overflow-hidden bg-sand mx-auto max-w-[280px] shadow-[0_25px_60px_-35px_rgba(15,74,63,0.35)] group-hover:shadow-[0_35px_80px_-35px_rgba(233,30,99,0.45)] transition-all duration-700">
+        {/* Image — padded so it doesn't touch circle edges */}
         <img
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="w-full h-full object-contain group-hover:scale-[1.06] transition-transform duration-[1200ms] ease-out"
+          className="w-full h-full object-contain p-6 group-hover:scale-[1.06] transition-transform duration-[1200ms] ease-out"
           onError={(e) => {
             e.currentTarget.style.display = "none";
             e.currentTarget.parentElement.innerHTML =
               '<div class="w-full h-full flex items-center justify-center text-7xl">🫙</div>';
           }}
         />
+
+        {/* Most Loved badge — inside the circle, top-center */}
+        {isFeatured && (
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 bg-brandPink text-cream text-[9px] uppercase tracking-[0.18em] font-bold px-3 py-1.5 rounded-full shadow-md whitespace-nowrap">
+            Most Loved
+          </div>
+        )}
       </div>
 
       {/* Text block */}
-      <div className="mt-7 max-w-[300px] mx-auto">
+      <div className="mt-6 max-w-[280px] mx-auto">
         {/* Category label */}
         <div className="text-[10px] uppercase tracking-[0.22em] text-brandPink font-bold">
           {product.category}
@@ -45,7 +41,7 @@ export default function ProductCard({ product }) {
         </div>
 
         {/* Product name */}
-        <h3 className="font-display text-[1.5rem] md:text-[1.7rem] text-ink mt-1 leading-[1.15] group-hover:text-brandPink transition-colors duration-300">
+        <h3 className="font-display text-[1.4rem] md:text-[1.5rem] text-ink mt-1 leading-[1.15] group-hover:text-brandPink transition-colors duration-300">
           {product.name}
         </h3>
 

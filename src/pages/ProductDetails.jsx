@@ -124,7 +124,7 @@ export default function ProductDetails() {
       </div>
 
       {related.length > 0 && (
-        <section className="mt-24">
+        <SectionReveal className="mt-24">
           <h2 className="font-heading text-3xl font-bold text-deepred mb-8">You may also like</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
             {related.map((p) => (
@@ -139,7 +139,7 @@ export default function ProductDetails() {
               </Link>
             ))}
           </div>
-        </section>
+        </SectionReveal>
       )}
     </div>
   );

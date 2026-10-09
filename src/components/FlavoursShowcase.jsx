@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../data/products";
+import SectionReveal from "./SectionReveal";
 
 // Emoji icon per flavour (no downloads needed)
 const emojiForSlug = {
@@ -26,7 +27,7 @@ export default function FlavoursShowcase() {
   const active = products[activeIdx];
 
   return (
-    <section className="relative bg-[#0A3A30] text-cream py-24 md:py-36 overflow-hidden">
+    <SectionReveal className="relative bg-[#0A3A30] text-cream py-24 md:py-36 overflow-hidden">
       {/* Dot texture */}
       <div
         aria-hidden="true"
@@ -186,6 +187,6 @@ export default function FlavoursShowcase() {
           </div>
         </div>
       </div>
-    </section>
+    </SectionReveal>
   );
 }

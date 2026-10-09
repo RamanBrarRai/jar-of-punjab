@@ -5,7 +5,7 @@ import SectionReveal from "../components/SectionReveal";
 export default function About() {
   return (
     <div>
-      <section className="bg-gradient-to-br from-mustard/25 via-cream to-warmorange/15 py-20">
+      <SectionReveal className="bg-gradient-to-br from-mustard/25 via-cream to-warmorange/15 py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <SectionReveal>
             <div className="font-punjabi text-warmorange text-lg">ਸਾਡੀ ਕਹਾਣੀ</div>
@@ -15,7 +15,7 @@ export default function About() {
             </p>
           </SectionReveal>
         </div>
-      </section>
+      </SectionReveal>
 
       <SectionReveal className="max-w-3xl mx-auto px-4 py-16 leading-relaxed text-lg text-earthy/85 space-y-6">
         <p>I'm a Punjabi woman, a mother, and — for as long as I can remember — the person in my family who stands by the stove in summer, cutting raw mangoes for achar. The recipe I use today is my nani's. My mother taught me. Now it's mine.</p>
